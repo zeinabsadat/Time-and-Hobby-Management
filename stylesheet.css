@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    background-color: #eff7f6;
+}
+#container{
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+#topContainer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 12px;
+}
+#calendarContainer{
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+#calendar div {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#calendar div.today {
+    background-color: #b2f7ef;
+    font-weight: bold;
+    border: 2px solid #7bdff2;
+}
+#calendarTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#monthYear {
+    font-size: 1rem;
+    margin: 0 15px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn {
+    padding: 8px 16px;
+    border: 1px solid #f2b5d4;
+    background-color: #f7d6e0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#animation {
+    transition: opacity 0.5s ease;
+}
+
+#animation[style*="display: none"] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#animation[style*="display: block"] {
+    opacity: 1;
+}
+.urPlan{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#planTitle{
+    margin-bottom: 24px;
+}
+#items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    background-color: #ffe5ec79;
+    border: 1px solid #ffc2d1;
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin: 0px;
+    width: fit-content;
+  }
+  
+  .names {
+    margin: 0;
+    margin-right: 10px; /* Space between name and icon */
+    font-size: 14px;
+  }
+  
+  .icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  
