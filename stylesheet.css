@@ -9,7 +9,7 @@ html, body{
     margin: 16px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 }
 #topContainer{
@@ -84,39 +84,72 @@ html, body{
     margin-top: 32px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
 }
 #planTitle{
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+#space{
+    width: 100px;
 }
 #items {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 100%;
+    width: 300px;
     gap: 8px;
   }
   
-  .item {
+.item {
     display: flex;
     align-items: center;
     background-color: #ffe5ec79;
     border: 1px solid #ffc2d1;
     border-radius: 4px;
-    padding: 6px 12px;
+    padding: 5px 10px;
     margin: 0px;
     width: fit-content;
-  }
-  
-  .names {
-    margin: 0;
-    margin-right: 10px; /* Space between name and icon */
-    font-size: 14px;
-  }
-  
-  .icon {
+    gap: 4px;
+}
+.icon {
     width: 16px;
     height: 16px;
     cursor: pointer;
-  }
-  
+}
+.planSection{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+} 
+.titleTime{
+    margin-bottom: 12px;
+}
+.time{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 280px;
+}
+.line{
+    width: 0.5px;
+    height: 20px;
+    background-color: #cdcdcd;
+    border: none;
+    margin: 0 8px;
+}
+.urTime{
+    width: 180px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
