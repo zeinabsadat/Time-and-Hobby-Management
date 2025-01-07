@@ -12,16 +12,24 @@ let currentYear = today.getFullYear(); // Current year
 // Select DOM elements
 const calendar = document.getElementById("calendar");
 const monthYearLabel = document.getElementById("monthYear");
-const animationDiv = document.getElementById("animation");
-const itemsContainer = document.getElementById("items"); // Container for items
+const itemsMorning = document.getElementById("items");
+const itemsAfternoon = document.getElementById("itemsAfternoon");
+const itemsEvening = document.getElementById("itemsEvening");
 
-// Sample items to display
-const names = ["Personal Hygiene", "Exercise", "Breakfast", "Plan the Day", "Start Work/Study"];
+// Sample items for morning, afternoon, and evening
+const morningActivities = [
+  "Personal Hygiene", "Exercise", "Breakfast", "Plan the Day", "Start Work/Study"
+];
+const afternoonActivities = [
+  "Lunch", "Work or Study", "Short Breaks", "Socialize", "Appointments"
+];
+const eveningActivities = [
+  "Dinner", "Relaxation", "Personal Time", "Prepare for Tomorrow", "Bedtime Routine"
+];
 
 // Function to render the calendar
 function renderCalendar(month, year) {
   monthYearLabel.textContent = `${monthNames[month]} ${year}`;
-  animationDiv.style.display = month === 0 ? "block" : "none";
 
   calendar.innerHTML = ""; // Clear the previous calendar content
 
@@ -44,11 +52,11 @@ function renderCalendar(month, year) {
 }
 
 // Function to render draggable items
-function renderItems(names) {
-  itemsContainer.innerHTML = "";
-  names.forEach(name => {
-    const itemDiv = createDraggableItem(name);
-    itemsContainer.appendChild(itemDiv);
+function renderItems(container, activities) {
+  container.innerHTML = "";
+  activities.forEach(activity => {
+    const itemDiv = createDraggableItem(activity);
+    container.appendChild(itemDiv);
   });
 }
 
@@ -71,7 +79,7 @@ function createDraggableItem(name) {
     if (itemDiv.parentElement.classList.contains("urTime")) {
       itemDiv.parentElement.innerHTML = ""; // Clear `urTime`
     } else {
-      itemsContainer.removeChild(itemDiv);
+      container.removeChild(itemDiv);
     }
   });
 
@@ -89,7 +97,7 @@ function createDraggableItem(name) {
   return itemDiv;
 }
 
-// Drag-and-drop logic for `urTime`
+// Drag-and-drop logic for all `urTime` containers
 document.querySelectorAll(".urTime").forEach(urTime => {
   urTime.addEventListener("dragover", (e) => e.preventDefault());
 
@@ -137,4 +145,6 @@ function nextMonth() {
 
 // Initialize calendar and items
 renderCalendar(currentMonth, currentYear);
-renderItems(names);
+renderItems(itemsMorning, morningActivities);
+renderItems(itemsAfternoon, afternoonActivities);
+renderItems(itemsEvening, eveningActivities);

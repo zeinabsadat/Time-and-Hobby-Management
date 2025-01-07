@@ -116,20 +116,30 @@ html, body{
     width: fit-content;
     gap: 4px;
 }
-.icon {
+#itemsEvening{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 300px;
+    gap: 8px;
+}
+#itemsAfternoon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 300px;
+    gap: 8px;
+}
+.icon{
     width: 16px;
     height: 16px;
     cursor: pointer;
 }
 .planSection{
-    margin-top: 24px;
     display: flex;
     flex-direction: column;
     gap: 4px;
 } 
-.titleTime{
-    margin-bottom: 12px;
-}
 .time{
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -138,6 +148,7 @@ html, body{
     flex-direction: row;
     align-items: center;
     width: 280px;
+    margin-top: 12px;
 }
 .line{
     width: 0.5px;
@@ -152,4 +163,10 @@ html, body{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.myInfo{
+    margin-top: 12px;
+}
+.titleTime{
+    margin: 12px 0;
 }
